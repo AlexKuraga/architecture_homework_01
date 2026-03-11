@@ -26,8 +26,8 @@
 - Роль:
   - **User** - зарегистрированный пользователь, который управляет папками и файлами.
 - Внешние системы:
-  - Object Storage (S3-compatible) - хранение бинарных объектов (файлов).
-  - Email Service (SMTP) - отправка подтверждений/уведомлений пользователю (опционально).
+  - Object Storage (S3-compatible) - хранение бинарных объектов.
+  - Email Service (SMTP) - отправка подтверждений/уведомлений пользователю.
 
 ## Компоненты / контейнеры и их ответственность
 1. **Web Application (React SPA)**  
@@ -70,7 +70,7 @@
 - `DELETE /folders/{folderId}` - удалить папку
 
 
-## Сценарий Upload File (шаги)
+## Сценарий Upload File
 1. Пользователь выбирает файл → Web App отправляет `POST /folders/{folderId}/files`.
 2. API валидирует запрос и передаёт в File Service.
 3. File Service генерирует `objectKey` и через Storage Adapter делает `PUT` в Object Storage.
